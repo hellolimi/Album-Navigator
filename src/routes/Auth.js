@@ -6,9 +6,9 @@ const FormWrap = styled.div`
     position: absolute; top:50%; left:50%; transform:translate(-50%, -50%);
     h1 { margin-bottom:1rem; border-bottom:1px solid #FF9E9E; font-size:3.5rem; color:#666; line-height:7rem; }
     form{ display:flex; flex-direction:column; align-items: center;
-        > * { margin-bottom 1rem; height:2.5rem; width:380px; }
-        input{ padding:0 0.5rem; border:none; }
-        button{ margin-bottom:0; background-color:#FF9E9E; border:none; }
+        > * { margin-bottom 1rem; height:3rem; width:380px; }
+        input{ padding:0 0.5rem; border:1px solid #ededed; }
+        button{ margin-bottom:0; background-color:#FF9E9E; border:none; border-radius:0.5rem; }
         span{ height:1.25rem; line-height:1.25rem; font-size:0.975rem; color:#A50000; }
     }
 `;
