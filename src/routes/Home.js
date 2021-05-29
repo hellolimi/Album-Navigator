@@ -54,7 +54,7 @@ function Home(props) {
     return <MainHome>   
         <Header />
         <Create onCreate={onCreate} />
-        <List data={getPosts(data)} onDelete={onDelete} onCreate={onCreate} />
+        <List data={getPosts(data)} onDelete={onDelete} onCreate={onCreate} onUpdate={onUpdate} />
         <Pagination postsToView={postsToView} totalPosts={data.length} paginate={setCurrentPg} />
     </MainHome>
 }
