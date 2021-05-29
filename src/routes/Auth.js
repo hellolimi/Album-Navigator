@@ -1,9 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
-function Auth(props) {
-    return <div>
-        AUTH
-    </div>
+const FormWrap = styled.div`
+    display: flex; flex-direction:column; text-align:center;
+    position: absolute; top:50%; left:50%; transform:translate(-50%, -50%);
+    h1 { margin-bottom:1rem; border-bottom:1px solid #FF9E9E; font-size:3.5rem; color:#666; line-height:7rem; }
+    form{ display:flex; flex-direction:column; align-items: center;
+        > * { margin-bottom 1rem; height:2.5rem; width:380px; }
+        input{ padding:0 0.5rem; border:none; }
+        button{ margin-bottom:0; background-color:#FF9E9E; border:none; }
+        span{ height:1.25rem; line-height:1.25rem; font-size:0.975rem; color:#A50000; }
+    }
+`;
+
+function Auth(){
+    const [inputs, setInputs] = useState({
+        email: '',
+        password: ''
+    });
+    const {email, password} = inputs;
+    const [typeErr, setTypeErr] = useState(false);
+
+    const onChange = e => {
+        const {name, value} = e.target;
+
+        setInputs(prev => ({...prev, [name]:value}));
+    }
+
+    const onEmailBlur = () => {
+        let regxep = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+        if(!regxep.test(email)){
+            setTypeErr(true);
+        }else{
+            setTypeErr(false);
+        }
+    }
+
+    const onSubmit = () => {
+        if(email !== ''){
+            if(password !== ''){
+                let token = '1welcomeToAlbumNavigator1'
+                sessionStorage.setItem('token', token);
+            }else{
+                alert('Please enter your password!');
+            }
+        }else{
+            alert('Please enter your email address!');
+        }
+    }
+
+    return (
+        <FormWrap>
+        <h1>Album Navigator</h1>
+        <form onSubmit={onSubmit}>
+            <input type="email" required name="email" placeholder="Email" onChange={onChange} onBlur={onEmailBlur} />
+            {typeErr&&<span>Please enter a valid email address.</span>}
+            <input type="password" required name="password" placeholder="Password" onChange={onChange} />
+            <button type="submit">Sign In</button>
+        </form>
+    </FormWrap>
+    );
 }
 
 export default Auth;
