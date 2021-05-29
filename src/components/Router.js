@@ -7,7 +7,7 @@ function AppRouter() {
     const [userIn, setUserIn] = useState(false);
 
     useEffect(()=>{
-        if(sessionStorage.getItem('token')){
+        if(localStorage.getItem('token')){
             setUserIn(true);
         }else{
             setUserIn(false);

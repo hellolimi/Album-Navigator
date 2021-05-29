@@ -40,7 +40,7 @@ function Auth(){
         if(email !== ''){
             if(password !== ''){
                 let token = '1welcomeToAlbumNavigator1'
-                sessionStorage.setItem('token', token);
+                localStorage.setItem('token', token);
             }else{
                 alert('Please enter your password!');
             }
