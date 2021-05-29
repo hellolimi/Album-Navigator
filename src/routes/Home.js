@@ -13,6 +13,7 @@ const MainHome = styled.div`
 function Home(props) {
     const [data, setData] = useState([]);
     const [currentPg, setCurrentPg] = useState(1);
+    const newUser = 11;
     const postsToView = 5;
 
     useEffect(()=>{
@@ -37,10 +38,15 @@ function Home(props) {
         return currentPost;
     }
 
+    const onUpdate = (postData, postId) => {
+        let index = data.findIndex(obj => obj.id === postId);
+        setData(prev => [...prev, data[index].title = postData]);
+    }
+
     const onCreate = text => {
-        const {userid, id} = data[data.length -1]
+        const {id} = data[data.length -1]
         const newData = {
-            userid: userid + 1,
+            userid: newUser,
             id: id + 1,
             title: text
         }
