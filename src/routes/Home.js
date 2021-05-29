@@ -4,9 +4,10 @@ import styled from 'styled-components';
 import List from '../components/List';
 import Pagination from '../components/Pagination';
 import Create from '../components/Create';
+import Header from '../components/Header';
 
 const MainHome = styled.div`
-    padding-top:4.5rem;
+    padding-top:5rem;
 `;
 
 function Home(props) {
@@ -51,6 +52,7 @@ function Home(props) {
     }
 
     return <MainHome>   
+        <Header />
         <Create onCreate={onCreate} />
         <List data={getPosts(data)} onDelete={onDelete} onCreate={onCreate} />
         <Pagination postsToView={postsToView} totalPosts={data.length} paginate={setCurrentPg} />
