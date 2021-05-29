@@ -1,19 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 import List from '../components/List';
 import Pagination from '../components/Pagination';
+
+const MainHome = styled.div`
+    padding-top:4.5rem;
+`;
 
 function Home(props) {
     const [data, setData] = useState([]);
     const [currentPg, setCurrentPg] = useState(1);
-    const [postsToView, setpostsToView] = useState(5);
+    const postsToView = 5;
 
     useEffect(()=>{
         const fetchData = async () => {
             let dataUrl = "https://jsonplaceholder.typicode.com/albums";
             try{
                 const response = await axios.get(dataUrl);
-                setData(response.data);
+                let rawData = response.data;
+                setData(rawData.reverse());
             }catch (e){
                 throw Error(e);
             }
@@ -31,13 +37,12 @@ function Home(props) {
 
     const onDelete = postId => {
         setData(prev => prev.filter(el => el.id !== postId));
-    } 
+    }
 
-
-    return <div>
-        <List data={getPosts(data)} onDelete={onDelete} />
+    return <MainHome>   
+        <List data={getPosts(data)} onDelete={onDelete} onCreate={onCreate} />
         <Pagination postsToView={postsToView} totalPosts={data.length} paginate={setCurrentPg} />
-    </div>
+    </MainHome>
 }
 
 export default Home;
