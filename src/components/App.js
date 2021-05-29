@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
   body{ background-color:#FFEEEE; }
   li{ list-style:none; }
   img{ display:block; }
+  .wrap{ width:1180px; max-width:1180px; margin:0 auto; }
   :root {
     font-size: 18px;
     @media screen and (max-width: 1024px) {
@@ -19,10 +20,10 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function App() {
-  return <>
+  return <div className="wrap">
     <GlobalStyle />
     <AppRouter />
-  </>
+  </div>
 }
 
 export default App;
