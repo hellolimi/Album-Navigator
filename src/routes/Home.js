@@ -3,6 +3,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 import List from '../components/List';
 import Pagination from '../components/Pagination';
+import Create from '../components/Create';
 
 const MainHome = styled.div`
     padding-top:4.5rem;
@@ -35,11 +36,22 @@ function Home(props) {
         return currentPost;
     }
 
+    const onCreate = text => {
+        const {userid, id} = data[data.length -1]
+        const newData = {
+            userid: userid + 1,
+            id: id + 1,
+            title: text
+        }
+        setData(prev => [newData, ...prev]);
+    }
+
     const onDelete = postId => {
         setData(prev => prev.filter(el => el.id !== postId));
     }
 
     return <MainHome>   
+        <Create onCreate={onCreate} />
         <List data={getPosts(data)} onDelete={onDelete} onCreate={onCreate} />
         <Pagination postsToView={postsToView} totalPosts={data.length} paginate={setCurrentPg} />
     </MainHome>
