@@ -7,6 +7,8 @@ const GlobalStyle = createGlobalStyle`
   body{ background-color:#FFEEEE; }
   li{ list-style:none; }
   img{ display:block; }
+  fieldset{ border:none; }
+  button{ cursor:pointer; }
   .wrap{ width:1180px; max-width:1180px; margin:0 auto; }
   :root {
     *{ font-size: 18px; }

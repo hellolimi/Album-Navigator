@@ -6,7 +6,7 @@ const CreateForm = styled.form`
     margin-bottom:1rem; padding:2rem 0;
     > * { height:3rem; }
     input{ width:50%; margin-right:1rem; padding:0 0.5rem ; border:1px solid #ededed; }
-    button{ width:15%; background-color:#FF9E9E; border:none; border-radius:0.5rem; }
+    button{ width:15%; background-color:#FF9E9E; border:none; border-radius:0.5rem; color:#fff; }
 `;
 
 function Create({onCreate}) {
