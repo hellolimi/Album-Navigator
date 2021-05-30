@@ -11,4 +11,4 @@ function List({data, onDelete, onUpdate}) {
     </div>
 }
 
-export default List;
+export default React.memo(List);

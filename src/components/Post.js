@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import styled from "styled-components";
 
 const PostBlock = styled.li`
     position: relative; 
     padding:2.5rem 0; border-bottom:1px solid #FF9E9E;
-    .editBox { position:absolute; top:2.5rem; right:0; width:3.5rem;
-        > button { float:right; margin-bottom:0.5rem; border:none; background-color:transparent; color:#FF9E9E; }
+    .editBox { position:absolute; top:2.5rem; right:0; width:4rem;
+        > button { float:right; margin-bottom:0.5rem; border:none; background-color:transparent; color:#FF9E9E; font-size:0.875rem; }
         > div{ float:right; display:flex; flex-direction:column; background-color:#FF9E9E;
-            button{ padding:1rem; border:none; background-color:transparent; color:#fff; font-weight:bold; }
+            button{ padding:1rem; border:none; background-color:transparent; color:#fff; font-weight:400; }
         }
     }
-    h4{ width:100%; margin-bottom:1.25rem; text-align:center; font-size:2rem; font-weight:normal; }
+    h4{ width:100%; margin-bottom:1.25rem; text-align:center; font-size:2rem; font-weight:300; }
     img{ margin:0 auto; }
 
     form{ text-align:center;  
@@ -36,10 +36,10 @@ function Post({postId, postTitle, onDelete, onUpdate}) {
         }
     }
     
-    const onChange = e => {
+    const onChange = useCallback(e => {
         const {value} = e.target;
         setNewTitle(value);
-    }
+    }, []);
 
     const onSubmit = e => {
         e.preventDefault();
@@ -78,4 +78,4 @@ function Post({postId, postTitle, onDelete, onUpdate}) {
     );
 }
 
-export default Post;
+export default React.memo(Post);

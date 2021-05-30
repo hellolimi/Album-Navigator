@@ -65,4 +65,4 @@ function Home(props) {
     </MainHome>
 }
 
-export default Home;
+export default React.memo(Home);

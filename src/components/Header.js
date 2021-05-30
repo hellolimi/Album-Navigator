@@ -6,11 +6,11 @@ const Gnb = styled.header`
     width:100%; height:5rem; 
     background-color:#FFEEEE; border-bottom:1px solid #FF9E9E;
     .wrap{ position:relative; 
-        h1{ line-height:5rem; text-align:center; color:#666; font-size:2.5rem; }
+        h1{ line-height:5rem; text-align:center; color:#666; font-size:2.5rem; font-weight:600; }
         button{ 
             position:absolute; top:0; right:0; height:5rem; 
             border:none; background-color:transparent; 
-            font-size:1.125rem; color:#666; 
+            font-size:1.25rem; font-weight:600; color:#FF9E9E; 
         }
     }
 `;
@@ -29,10 +29,10 @@ function Header(props) {
         <Gnb>
             <div className="wrap">
                 <h1>Album Navigator</h1>
-                <button type="button" onClick={onLogOut}>Log Out</button>
+                <button type="button" onClick={onLogOut}>Log Out ⇒</button>
             </div>
         </Gnb>
     );
 }
 
-export default Header;
+export default React.memo(Header);

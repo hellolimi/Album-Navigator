@@ -61,4 +61,4 @@ function Pagination({postsToView, totalPosts, paginate}) {
     );
 }
 
-export default Pagination;
+export default React.memo(Pagination);

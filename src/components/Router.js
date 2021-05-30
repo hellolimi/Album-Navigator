@@ -27,4 +27,4 @@ function AppRouter() {
     </Router>
 }
 
-export default AppRouter;
+export default React.memo(AppRouter);

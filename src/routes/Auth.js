@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
 
 const FormWrap = styled.div`
     display: flex; flex-direction:column; text-align:center;
     position: absolute; top:50%; left:50%; transform:translate(-50%, -50%);
-    h1 { margin-bottom:1rem; border-bottom:1px solid #FF9E9E; font-size:3.5rem; color:#666; line-height:7rem; }
+    h1 { margin-bottom:1rem; border-bottom:1px solid #FF9E9E; font-size:3.5rem; color:#666; line-height:7rem; font-weight:600; }
     form{ display:flex; flex-direction:column; align-items: center;
         > * { margin-bottom 1rem; height:3rem; width:380px; }
         input{ padding:0 0.5rem; border:1px solid #ededed; }
@@ -21,20 +21,20 @@ function Auth(){
     const {email, password} = inputs;
     const [typeErr, setTypeErr] = useState(false);
 
-    const onChange = e => {
+    const onChange = useCallback(e => {
         const {name, value} = e.target;
 
         setInputs(prev => ({...prev, [name]:value}));
-    }
+    }, [])
 
-    const onEmailBlur = () => {
+    const onEmailBlur = useCallback(() => {
         let regxep = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
         if(!regxep.test(email)){
             setTypeErr(true);
         }else{
             setTypeErr(false);
         }
-    }
+    }, [email])
 
     const onSubmit = () => {
         if(email !== ''){
@@ -62,4 +62,4 @@ function Auth(){
     );
 }
 
-export default Auth;
+export default React.memo(Auth);
