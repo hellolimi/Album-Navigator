@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/Album-Navigator/static/js/main.d1ba6116.chunk.js",
+    "main.js.map": "/Album-Navigator/static/js/main.d1ba6116.chunk.js.map",
+    "runtime-main.js": "/Album-Navigator/static/js/runtime-main.c0d9aaa6.js",
+    "runtime-main.js.map": "/Album-Navigator/static/js/runtime-main.c0d9aaa6.js.map",
+    "static/js/2.44d11f6f.chunk.js": "/Album-Navigator/static/js/2.44d11f6f.chunk.js",
+    "static/js/2.44d11f6f.chunk.js.map": "/Album-Navigator/static/js/2.44d11f6f.chunk.js.map",
+    "index.html": "/Album-Navigator/index.html",
+    "static/js/2.44d11f6f.chunk.js.LICENSE.txt": "/Album-Navigator/static/js/2.44d11f6f.chunk.js.LICENSE.txt",
+    "static/media/noto-sans-kr-v13-latin-regular.68b6dc32.woff": "/Album-Navigator/static/media/noto-sans-kr-v13-latin-regular.68b6dc32.woff",
+    "static/media/oswald-v36-latin-300.6397ef09.woff": "/Album-Navigator/static/media/oswald-v36-latin-300.6397ef09.woff",
+    "static/media/oswald-v36-latin-600.98b7df2b.woff": "/Album-Navigator/static/media/oswald-v36-latin-600.98b7df2b.woff",
+    "static/media/oswald-v36-latin-regular.3d1d485b.woff": "/Album-Navigator/static/media/oswald-v36-latin-regular.3d1d485b.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c0d9aaa6.js",
+    "static/js/2.44d11f6f.chunk.js",
+    "static/js/main.d1ba6116.chunk.js"
+  ]
+}
