@@ -66,11 +66,11 @@ function Post({postId, postTitle, onDelete, onUpdate}) {
                         <input type="text" value={newTitle} onChange={onChange}/>
                         <button type="submit">Update!</button>
                     </fieldset>
-                    <img src="http://placehold.it/580x400/cccccc/ffffff?text=demo-image" alt="demo" />
+                    <img src="https://via.placeholder.com/580x400.png?text=Demo" alt="demo" />
                 </form>:
                 <div>
                     <h4>{postTitle}</h4>
-                    <img src="http://placehold.it/580x400/cccccc/ffffff?text=demo-image" alt="demo" />
+                    <img src="https://via.placeholder.com/580x400.png?text=Demo" alt="demo" />
                 </div>
             }
             
