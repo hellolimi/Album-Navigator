@@ -36,11 +36,13 @@ function Auth(){
         }
     }, [email])
 
-    const onSubmit = () => {
+    const onSubmit = e => {
+        e.preventDefault();
         if(email !== ''){
             if(password !== ''){
                 let token = '1welcomeToAlbumNavigator1'
                 localStorage.setItem('token', token);
+                window.location.reload();
             }else{
                 alert('Please enter your password!');
             }
