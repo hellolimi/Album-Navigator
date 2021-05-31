@@ -14,14 +14,14 @@ const PaginationBlock = styled.div`
     
 `;
 
-function Pagination({postsToView, totalPosts, paginate}) {
-
+function Pagination({postsToView, totalPosts, paginate, buttonState}) {
     const [pageNums, SetpageNums] = useState([]);
     const [currentBtn, setCurrentBtn] = useState({
         start: 1,
         end: 5
     });
-    
+    const [refreshBtn, setRefreshBtn] = buttonState;
+
     const prevNextBtn = e => {
         const {name} = e.target;
         const {start, end} = currentBtn;
@@ -46,9 +46,20 @@ function Pagination({postsToView, totalPosts, paginate}) {
             }
             SetpageNums(numArray);
         }
-
         setPagination();
-    }, [totalPosts, postsToView, currentBtn]);
+
+        const refreshButtons = () => {
+            setCurrentBtn({
+                start: 1,
+                end: 5
+            });
+        }
+        refreshBtn&&refreshButtons();
+
+        return () => {
+            setRefreshBtn(false);
+        }
+    }, [totalPosts, postsToView, currentBtn, refreshBtn, setRefreshBtn]);
 
     return (
         <PaginationBlock>
