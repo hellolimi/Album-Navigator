@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/Album-Navigator/static/js/main.ee27d758.chunk.js",
-    "main.js.map": "/Album-Navigator/static/js/main.ee27d758.chunk.js.map",
+    "main.js": "/Album-Navigator/static/js/main.2d5519e6.chunk.js",
+    "main.js.map": "/Album-Navigator/static/js/main.2d5519e6.chunk.js.map",
     "runtime-main.js": "/Album-Navigator/static/js/runtime-main.c0d9aaa6.js",
     "runtime-main.js.map": "/Album-Navigator/static/js/runtime-main.c0d9aaa6.js.map",
     "static/js/2.4de5e832.chunk.js": "/Album-Navigator/static/js/2.4de5e832.chunk.js",
@@ -16,6 +16,6 @@
   "entrypoints": [
     "static/js/runtime-main.c0d9aaa6.js",
     "static/js/2.4de5e832.chunk.js",
-    "static/js/main.ee27d758.chunk.js"
+    "static/js/main.2d5519e6.chunk.js"
   ]
 }
