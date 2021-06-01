@@ -28,7 +28,6 @@ function Post({postId, postTitle, onDelete, onUpdate}) {
 
     const onToggle = e => {
         const {name} = e.target;
-        console.log(name);
         if(name === "edit"){
             setEdit(prev => !prev);
         }else{
