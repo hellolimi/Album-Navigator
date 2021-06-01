@@ -15,6 +15,7 @@ function Home(props) {
     const [currentPg, setCurrentPg] = useState(1);
     const newUser = 11;
     const postsToView = 5;
+    const [refreshBtn, setRefreshBtn] = useState(false);
 
     useEffect(()=>{
         const fetchData = async () => {
@@ -51,17 +52,21 @@ function Home(props) {
             title: text
         }
         setData(prev => [newData, ...prev]);
+        setCurrentPg(1);
+        setRefreshBtn(true);
     }
 
     const onDelete = postId => {
-        setData(prev => prev.filter(el => el.id !== postId));
+        let yesDelete = window.confirm(`Do you really want to delete this post?\nCannot recover it once it's deleted!`);
+        yesDelete&&setData(prev => prev.filter(el => el.id !== postId));
+        
     }
 
     return <MainHome>   
         <Header />
         <Create onCreate={onCreate} />
         <List data={getPosts(data)} onDelete={onDelete} onCreate={onCreate} onUpdate={onUpdate} />
-        <Pagination postsToView={postsToView} totalPosts={data.length} paginate={setCurrentPg} />
+        <Pagination postsToView={postsToView} totalPosts={data.length} page={[currentPg, setCurrentPg]} buttonState={[refreshBtn, setRefreshBtn]}/>
     </MainHome>
 }
 
