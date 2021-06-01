@@ -13,7 +13,7 @@
 
 - to create hardcoded dummy login form / with email & password
   - to check the format of the entered email using Regex
-- to get the web document's data (JSON) to the app
+- to get the web document's data (JSON) in the app
 - to implement CRUD API
   - to create a demo post
   - to read the demo posts

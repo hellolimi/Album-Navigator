@@ -27,7 +27,7 @@ const Gnb = styled.header`
 
 function Header(props) {
     const onLogOut = () => {
-        const confirm = window.confirm('Do you really want to leave Albul Navigator?');
+        const confirm = window.confirm('Do you really want to leave Album Navigator?');
         console.log(confirm);
         if(confirm){
             localStorage.removeItem('token');
