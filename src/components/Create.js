@@ -7,6 +7,11 @@ const CreateForm = styled.form`
     > * { height:3rem; }
     input{ width:50%; margin-right:1rem; padding:0 0.5rem ; border:1px solid #ededed; }
     button{ width:15%; background-color:#FF9E9E; border:none; border-radius:0.5rem; color:#fff; font-weight:400; }
+    @media screen and (max-width: 474px){
+        padding:1rem 0;
+        input{ width:80%; }
+        button{ width:20%; }
+    }
 `;
 
 function Create({onCreate}) {

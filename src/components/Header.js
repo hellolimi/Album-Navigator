@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Gnb = styled.header`
     position:fixed; top:0; left:0; z-index:1000;
-    width:100%; height:5rem; 
+    width:100%; max-width:100%; height:5rem; 
     background-color:#FFEEEE; border-bottom:1px solid #FF9E9E;
     .wrap{ position:relative; 
         h1{ line-height:5rem; text-align:center; color:#666; font-size:2.5rem; font-weight:600; }
@@ -13,6 +13,16 @@ const Gnb = styled.header`
             font-size:1.25rem; font-weight:600; color:#FF9E9E; 
         }
     }
+    @media screen and (max-width: 1024px){
+        padding:0 1rem;
+    }
+    @media screen and (max-width: 474px){
+        h1{ float:left; font-size:2rem !important; }
+    }
+    @media screen and (max-width: 474px){
+        h1{ font-size:1.5rem !important; }
+    }
+  
 `;
 
 function Header(props) {

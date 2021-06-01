@@ -19,6 +19,13 @@ const PostBlock = styled.li`
             button{ width:15%; background-color:#FF9E9E; border:none; border-radius:0.5rem; color:#fff; }
         }
     }
+    @media screen and (max-width: 474px){
+        padding:1rem 0; 
+        .editBox{ top:1.25rem; !important; width:20%;
+         >button{ font-size:0.5rem; }
+        }
+        h4{ text-align:left; font-size:1rem; padding-right:20%; }
+    }
 `;
 
 function Post({postId, postTitle, onDelete, onUpdate}) {
